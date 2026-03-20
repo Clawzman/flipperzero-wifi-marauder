@@ -12,7 +12,7 @@ typedef enum { FOCUS_CONSOLE_END = 0, FOCUS_CONSOLE_START, FOCUS_CONSOLE_TOGGLE 
 #define SHOW_STOPSCAN_TIP (true)
 #define NO_TIP (false)
 
-#define MAX_OPTIONS (16)
+#define MAX_OPTIONS (17)
 typedef struct {
     const char* item_string;
     const char* options_menu[MAX_OPTIONS];
@@ -90,13 +90,9 @@ const WifiMarauderItem items[NUM_MENU_ITEMS] = {
       "badmsg",
       "sleep",
       "sae flood",
-      "sour apple",
-      "swiftpair spam",
-      "samsung spam",
-      "google spam",
-      "flipper spam",
-      "bt spam all"},
-     13,
+      "channel switch",
+      "quiet time"},
+     9,
      {"attack -t deauth",
       "attack -t probe",
       "attack -t rickroll",
@@ -104,7 +100,20 @@ const WifiMarauderItem items[NUM_MENU_ITEMS] = {
       "attack -t badmsg",
       "attack -t sleep",
       "attack -t sae",
-      "blespam -t apple",
+      "attack -t csa",
+      "attack -t quiet"},
+     NO_ARGS,
+     FOCUS_CONSOLE_END,
+     SHOW_STOPSCAN_TIP},
+    {"BLE Spam",
+     {"sour apple",
+      "swiftpair spam",
+      "samsung spam",
+      "google spam",
+      "flipper spam",
+      "bt spam all"},
+     6,
+     {"blespam -t apple",
       "blespam -t windows",
       "blespam -t samsung",
       "blespam -t google",
@@ -178,8 +187,8 @@ const WifiMarauderItem items[NUM_MENU_ITEMS] = {
      FOCUS_CONSOLE_END,
      SHOW_STOPSCAN_TIP},
     {"Sniff",
-     {"beacon", "deauth", "pmkid", "probe", "pwn", "raw", "bt", "skim", "airtag", "flipper", "flock", "mactrack", "packetcount", "pineapple", "multissid", "sae"},
-     16,
+     {"beacon", "deauth", "pmkid", "probe", "pwn", "raw", "bt", "skim", "airtag", "flipper", "flock", "meta", "mactrack", "packetcount", "pineapple", "multissid", "sae"},
+     17,
      {"sniffbeacon",
       "sniffdeauth",
       "sniffpmkid",
@@ -191,6 +200,7 @@ const WifiMarauderItem items[NUM_MENU_ITEMS] = {
       "sniffbt -t airtag",
       "sniffbt -t flipper",
       "sniffbt -t flock",
+      "sniffbt -t meta",
       "mactrack",
       "packetcount",
       "sniffpinescan",
